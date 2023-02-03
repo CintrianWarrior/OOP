@@ -35,7 +35,7 @@ public class Main {
         fifthCar.color = "Оранжевый";
         fifthCar.year = 2016;
         fifthCar.country = "Южная Корея";
-        System.out.println(fifthCar);
+        System.out.println(firstCar);
         System.out.println(secondCar);
         System.out.println(thirdCar);
         System.out.println(fouthCar);
