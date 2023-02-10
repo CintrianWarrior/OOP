@@ -12,9 +12,28 @@ public class Car {
     private String registrationNumber;
     private final int sittingPlace;
     private boolean summerTire;
+    private Key key;
+
+    public static class Key {
+        private final boolean remoteEngineStart;
+        private final boolean withoutKeyAccess;
+
+        public Key(boolean remoteEngineStart, boolean withoutKeyAccess) {
+            this.remoteEngineStart = remoteEngineStart;
+            this.withoutKeyAccess = withoutKeyAccess;
+        }
+
+        public boolean isRemoteEngineStart() {
+            return remoteEngineStart;
+        }
+
+        public boolean isWithoutKeyAccess() {
+            return withoutKeyAccess;
+        }
+    }
 
 
-    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String bodyType, String registrationNumber, int sittingPlace, boolean summerTire) {
+    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String bodyType, String registrationNumber, int sittingPlace, boolean summerTire, Key key) {
         if (brand == null || brand.isEmpty() || brand.isBlank()) {
             this.brand = "default";
         } else {
@@ -50,6 +69,7 @@ public class Car {
             this.sittingPlace = sittingPlace;
         }
         this.summerTire = summerTire;
+        setKey(key);
     }
 
     public String getBrand() {
@@ -132,6 +152,18 @@ public class Car {
         this.summerTire = summerTire;
     }
 
+    public Key getKey() {
+        return key;
+    }
+
+    public void setKey(Key key) {
+        if (key == null) {
+            key = new Key(false, false);
+        } else {
+            this.key = key;
+        }
+    }
+
     public void changeTire(int month) {
         if (month >= 3 && month < 11) {
             this.summerTire = true;
@@ -139,7 +171,6 @@ public class Car {
             this.summerTire = false;
         }
     }
-
     @Override
     public String toString() {
         return "brand - " + brand + ", " +
@@ -152,6 +183,9 @@ public class Car {
                 "bodyType - " + bodyType + ", " +
                 "registrationNumber - " + registrationNumber + ", " +
                 "sittingPlace - " + sittingPlace + ", " +
-                "summerTire - " + (summerTire ? "летняя резина" : "зимняя резина" + ".");
+                "summerTire - " + (summerTire ? "летняя резина" : "зимняя резина") + ", " +
+                "remoteEngineStart - " + (getKey().remoteEngineStart ? "удаленный запуск" : "без удаленного запуска") + ", " +
+                "withoutKeyAccess - " + (getKey().withoutKeyAccess ? "бесключевой доступ" : "ключевой доступ") + ".";
     }
+
 }
