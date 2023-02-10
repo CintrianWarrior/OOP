@@ -25,16 +25,8 @@ public class Car {
         } else {
             this.model = model;
         }
-        if (engineVolume <= 0) {
-            this.engineVolume = 1.5;
-        } else {
-            this.engineVolume = engineVolume;
-        }
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "Белый";
-        } else {
-            this.color = color;
-        }
+        setEngineVolume(engineVolume);
+        setColor(color);
         if (year <= 0) {
             this.year = 2000;
         } else {
@@ -45,21 +37,13 @@ public class Car {
         } else {
             this.country = country;
         }
-        if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
-            this.transmission = "default";
-        } else {
-            this.transmission = transmission;
-        }
+        setTransmission(transmission);
         if (bodyType == null || bodyType.isEmpty() || bodyType.isBlank()) {
             this.bodyType = "default";
         } else {
             this.bodyType = bodyType;
         }
-        if (registrationNumber == null || registrationNumber.isEmpty() || registrationNumber.isBlank()) {
-            this.registrationNumber = "default";
-        } else {
-            this.registrationNumber = registrationNumber;
-        }
+        setRegistrationNumber(registrationNumber);
         if (sittingPlace <= 0) {
             this.sittingPlace = 4;
         } else {
