@@ -1,12 +1,7 @@
 package transport;
 
-public class Car {
-    private final String brand;
-    private final String model;
+public class Car extends Transport {
     private double engineVolume;
-    private String color;
-    private final int year;
-    private final String country;
     private String transmission;
     private final String bodyType;
     private String registrationNumber;
@@ -33,29 +28,9 @@ public class Car {
     }
 
 
-    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String bodyType, String registrationNumber, int sittingPlace, boolean summerTire, Key key) {
-        if (brand == null || brand.isEmpty() || brand.isBlank()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null || model.isEmpty() || model.isBlank()) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
+    public Car(String brand, String model, double engineVolume, String colour, int year, String country, int maxSpeed, String transmission, String bodyType, String registrationNumber, int sittingPlace, boolean summerTire, Key key) {
+        super(brand, model, year, colour, country, maxSpeed);
         setEngineVolume(engineVolume);
-        setColor(color);
-        if (year <= 0) {
-            this.year = 2000;
-        } else {
-            this.year = year;
-        }
-        if (country == null || country.isEmpty() || country.isBlank()) {
-            this.country = "default";
-        } else {
-            this.country = country;
-        }
         setTransmission(transmission);
         if (bodyType == null || bodyType.isEmpty() || bodyType.isBlank()) {
             this.bodyType = "default";
@@ -72,21 +47,6 @@ public class Car {
         setKey(key);
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
-    }
 
     public String getBodyType() {
         return bodyType;
@@ -108,17 +68,6 @@ public class Car {
         }
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "Белый";
-        } else {
-            this.color = brand;
-        }
-    }
 
     public String getTransmission() {
         return transmission;
@@ -171,14 +120,11 @@ public class Car {
             this.summerTire = false;
         }
     }
+
     @Override
     public String toString() {
-        return "brand - " + brand + ", " +
-                "model - " + model + ", " +
+        return super.toString() + ", " +
                 "engineVolume - " + engineVolume + ", " +
-                "color - " + color + ", " +
-                "year - " + year + ", " +
-                "country - " + country + ", " +
                 "transmission - " + transmission + ", " +
                 "bodyType - " + bodyType + ", " +
                 "registrationNumber - " + registrationNumber + ", " +
