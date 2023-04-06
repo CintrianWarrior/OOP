@@ -1,44 +1,23 @@
+import transport.Bus;
+import transport.Car;
+
 public class Main {
     public static void main(String[] args) {
-        Car firstCar = new Car();
-        firstCar.brand = "Lada";
-        firstCar.model = "Granta";
-        firstCar.engineVolume = 1.7;
-        firstCar.color = "Желтый";
-        firstCar.year = 2015;
-        firstCar.country = "Россия";
-        Car secondCar = new Car();
-        secondCar.brand = "Audi";
-        secondCar.model = "A8 50 L TDI quattro";
-        secondCar.engineVolume = 3.0;
-        secondCar.color = "Черный";
-        secondCar.year = 2020;
-        secondCar.country = "Германия";
-        Car thirdCar = new Car();
-        thirdCar.brand = "BMW";
-        thirdCar.model = "Z8";
-        thirdCar.engineVolume = 3.0;
-        thirdCar.color = "Черный";
-        thirdCar.year = 2021;
-        thirdCar.country = "Германия";
-        Car fouthCar = new Car();
-        fouthCar.brand = "Kia";
-        fouthCar.model = "Sportage 4";
-        fouthCar.engineVolume = 2.4;
-        fouthCar.color = "Красный";
-        fouthCar.year = 2018;
-        fouthCar.country = "Южная Корея";
-        Car fifthCar = new Car();
-        fifthCar.brand = "Hyundai";
-        fifthCar.model = "Avante";
-        fifthCar.engineVolume = 1.6;
-        fifthCar.color = "Оранжевый";
-        fifthCar.year = 2016;
-        fifthCar.country = "Южная Корея";
-        System.out.println(fifthCar);
+        Car firstCar = new Car("Lada", "Granta", 1.7, "Желтый", 2015, "Россия", 120, "Автомат", "седан", "А123БВ45", 4, true, new Car.Key(true, true));
+        Car secondCar = new Car("Audi", "null", 3.0, "Черный", 2020, "Германия", 0 ,  "", "", "", 4, false, new Car.Key(false, false));
+        Car thirdCar = new Car("BMW", "Z8", 3.0, "Черный", 2021, "", -100, "", "", "", 6, true, new Car.Key(true, false));
+        Car fourthCar = new Car("Kia", "Sportage 4", 0, "Красный", 2018, "Южная Корея", 200, "", "", "", 4, true, new Car.Key(true, false));
+        Car fifthCar = new Car("Hyundai", "Avante", 1.6, "Оранжевый", -2012, "Южная Корея", 150, "", "", "", 4, true, new Car.Key(false, false));
+        System.out.println(firstCar);
         System.out.println(secondCar);
         System.out.println(thirdCar);
-        System.out.println(fouthCar);
+        System.out.println(fourthCar);
         System.out.println(fifthCar);
+        Bus firstBus = new Bus("Hyundai", "Universe", 2017, "Южная Корея", "Белый", 142);
+        Bus secondBus = new Bus("ЛиАЗ", "6213", 2009, "Россия", "Желтый", 65);
+        Bus thirdBus = new Bus("Volvo", "9700", 2012, "Швеция", "Серый", 0);
+        System.out.println(firstBus);
+        System.out.println(secondBus);
+        System.out.println(thirdBus);
     }
 }
