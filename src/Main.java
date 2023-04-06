@@ -1,3 +1,4 @@
+import transport.Bus;
 import transport.Car;
 
 public class Main {
@@ -12,5 +13,11 @@ public class Main {
         System.out.println(thirdCar);
         System.out.println(fourthCar);
         System.out.println(fifthCar);
+        Bus firstBus = new Bus("Hyundai", "Universe", 2017, "Южная Корея", "Белый", 142);
+        Bus secondBus = new Bus("ЛиАЗ", "6213", 2009, "Россия", "Желтый", 65);
+        Bus thirdBus = new Bus("Volvo", "9700", 2012, "Швеция", "Серый", 0);
+        System.out.println(firstBus);
+        System.out.println(secondBus);
+        System.out.println(thirdBus);
     }
 }
