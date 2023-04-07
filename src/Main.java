@@ -30,5 +30,8 @@ public class Main {
         System.out.println(fourthBus);
         firstCar.startMovement();
         secondHeavyCar.finishMovement();
+        thirdBus.maxSpeed();
+        fourthCar.bestTimeForCircle();
+        thirdHeavyCar.pitStop();
     }
 }
