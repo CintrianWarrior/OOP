@@ -1,12 +1,17 @@
 package transport;
 
 public class Bus extends Transport {
-    public Bus(String brand, String model, int year, String country, String colour, int maxSpeed) {
-        super(brand, model, year, country, colour, maxSpeed);
+    public Bus(String brand, String model, double engineVolume) {
+        super(brand, model, engineVolume);
     }
 
     @Override
-    public String toString() {
-        return super.toString();
+    public void startMovement() {
+        System.out.println("Автобус " + getBrand() + " " + getModel() + " начинает движение.");
+    }
+
+    @Override
+    public void finishMovement() {
+        System.out.println("Автобус " + getBrand() + " " + getModel() + " заканчивает движение.");
     }
 }
