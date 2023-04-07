@@ -1,8 +1,8 @@
 package transport;
 
-public class Bus extends Transport {
-    public Bus(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
+public class Bus extends Transport<LicenseD> {
+    public Bus(String brand, String model, double engineVolume, LicenseD driver) {
+        super(brand, model, engineVolume, driver);
     }
 
     @Override
@@ -33,5 +33,10 @@ public class Bus extends Transport {
         int maxSpeed = 100;
         int definedMaxTime = (int) (minSpeed + (maxSpeed - minSpeed) * Math.random());
         System.out.println("Максимальная скорость автобуса " + definedMaxTime + " км/ч.");
+    }
+
+    @Override
+    public void printInfo() {
+        System.out.println("Водитель " + getDriver().getName() + " управляет автобусом " + getBrand() + " " + getModel() + " и будет участвовать в заезде.");
     }
 }

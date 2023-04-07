@@ -1,9 +1,10 @@
 package transport;
 
-public class HeavyCar extends Transport {
-    public HeavyCar(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
+public class HeavyCar extends Transport<LicenseC> {
+    public HeavyCar(String brand, String model, double engineVolume, LicenseC driver) {
+        super(brand, model, engineVolume, driver);
     }
+
     @Override
     public void startMovement() {
         System.out.println("Грузовой автомобиль " + getBrand() + " " +  getModel() + " начинает движение.");
@@ -32,5 +33,9 @@ public class HeavyCar extends Transport {
         int maxSpeed = 120;
         int definedMaxTime = (int) (minSpeed + (maxSpeed - minSpeed) * Math.random());
         System.out.println("Максимальная скорость грузового автомобиля " + definedMaxTime + " км/ч.");
+    }
+    @Override
+    public void printInfo() {
+        System.out.println("Водитель " + getDriver().getName() + " управляет грузовым автомобилем " + getBrand() + " " + getModel() + " и будет участвовать в заезде.");
     }
 }
